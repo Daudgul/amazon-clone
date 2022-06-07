@@ -14,6 +14,7 @@ const Home = () => {
 
         <div className="home__row">
           <Product
+            key={654}
             id="12321341"
             title="The Lean Startup: How Constant Innovation Creates Radically Successful Businesses Paperback"
             price={11.96}

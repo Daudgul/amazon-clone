@@ -1,11 +1,15 @@
-import React from "react";
+import React, { useReducer } from "react";
 import "./Header.css";
 import Badge from "@mui/material/Badge";
 import SearchIcon from "@mui/icons-material/Search";
 import ShoppingBasketIcon from "@mui/icons-material/ShoppingBasket";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 const Header = () => {
+  const basket = useSelector((state) => state.basket);
+
+  const length = basket.length;
   return (
     <div className="header">
       <Link to="/">
@@ -19,10 +23,12 @@ const Header = () => {
         <SearchIcon className="header__searchIcon" />
       </div>
       <div className="header__nav">
-        <div className="header__option">
-          <span className="header__optionLineOne">Hello Guest</span>
-          <span className="header__optionLineTwo">Singn In</span>
-        </div>
+        <Link to="signin">
+          <div className="header__option">
+            <span className="header__optionLineOne">Hello Guest</span>
+            <span className="header__optionLineTwo">Singn In</span>
+          </div>
+        </Link>
         <div className="header__option">
           <span className="header__optionLineOne">Returns</span>
           <span className="header__optionLineTwo">& Orders</span>
@@ -35,7 +41,8 @@ const Header = () => {
         <Link to="checkout">
           <div className="header__optionBasket">
             <Badge
-              badgeContent={4}
+              sx={{ color: "#fff" }}
+              badgeContent={length}
               className="header__optionLineTwo header__basketCount"
             >
               <ShoppingBasketIcon />
