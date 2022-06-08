@@ -6,6 +6,9 @@ import Subtotal from "./Subtotal";
 
 const Checkout = () => {
   const basket = useSelector((state) => state.basket);
+  const user = useSelector((state) => state.user);
+
+  const guest = user?.email;
   return (
     <div className="checkout">
       <div className="checkout__left">
@@ -15,6 +18,7 @@ const Checkout = () => {
           className="checkout__ad"
         />
         <div>
+          <h3>Hello, {guest}</h3>
           <h2 className="checkout__title">Your Shopping Basket</h2>
 
           {basket.map((item) => (

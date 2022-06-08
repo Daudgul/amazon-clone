@@ -1,6 +1,7 @@
 import { createStore } from "redux";
+const initialState = { basket: [], user: null };
 
-const counterReducer = (state = { basket: [] }, action) => {
+const counterReducer = (state = initialState, action) => {
   if (action.type === "ADD_TO_BASKET") {
     return {
       ...state,
@@ -25,6 +26,13 @@ const counterReducer = (state = { basket: [] }, action) => {
     return {
       ...state,
       basket: newBasket,
+    };
+  }
+
+  if (action.type === "SET_USER") {
+    return {
+      ...state,
+      user: action.user,
     };
   }
   return state;

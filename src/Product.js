@@ -9,8 +9,6 @@ const Product = (props) => {
   const dispatch = useDispatch();
   const basket = useSelector((state) => state.basket);
 
-  console.log("This is the basket>>>", basket);
-
   const addToBasket = () => {
     // dispatch the item into the data layer
     dispatch({
@@ -26,7 +24,7 @@ const Product = (props) => {
   };
 
   return (
-    <div className="product">
+    <div key={id} className="product">
       <div className="product__info">
         <p>{title}</p>
         <p className="product__price">
