@@ -4,14 +4,28 @@ import Badge from "@mui/material/Badge";
 import SearchIcon from "@mui/icons-material/Search";
 import ShoppingBasketIcon from "@mui/icons-material/ShoppingBasket";
 import { Link } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { auth } from "./firebaseApp";
 
 const Header = () => {
   const basket = useSelector((state) => state.basket);
   const user = useSelector((state) => state.user);
+  const dispatch = useDispatch();
 
   const length = basket.length;
+
+  // const getTotalItems = (items) => {
+  //   items.reduce((ask, item) => ask + item.amount, 0);
+  //   console.log(items);
+  // };
+
+  // const getTotalItems = () => {
+  //   //remove from add basket
+  //   dispatch({
+  //     type: "GET_TOTAL_FROM_BASKET",
+  //     items: 0,
+  //   });
+  // };
 
   const handleAuthenticaton = () => {
     if (user) {

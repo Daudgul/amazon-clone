@@ -19,8 +19,8 @@
 
 .checkoutProduct__image {
   object-fit: contain;
-  width: 180px;
-  height: 180px;
+  width: 120px;
+  height: 120px;
 }
 
 .checkoutProduct__rating {
@@ -28,6 +28,21 @@
 }
 
 .checkoutProduct__title {
-  font-size: 17px;
+  font-size: 13px;
   font-weight: 800;
+}
+.amount__btn {
+  display: flex;
+  justify-content: space-between;
+}
+.btn {
+  width: 22px;
+  background: #f0c14b;
+  border: 1px solid;
+  border-color: #a88734 #9c7e31 #846a29;
+  color: #111;
+  cursor: pointer;
+}
+.btn:hover {
+  transform: scaleY(1.1);
 }

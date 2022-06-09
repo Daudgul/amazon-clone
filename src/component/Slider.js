@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
-import data from "./data.js";
 import "./Slider.css";
+import data from "./data.js";
+
 function Slider() {
   const [people, setPeople] = useState(data);
   const [index, setIndex] = useState(0);
@@ -38,17 +39,17 @@ function Slider() {
             position = "lastSlide";
           }
           return (
-            <article key={id}>
+            <article className="old__article" key={id}>
               <img className={`home__image ${position}`} src={image} />
             </article>
           );
         })}
       </div>
       <button className="prev" onClick={() => setIndex(index - 1)}>
-        <ArrowBackIosIcon />
+        <ArrowBackIosIcon sx={{ opacity: "0.5" }} fontSize="large" />
       </button>
       <button className="next" onClick={() => setIndex(index + 1)}>
-        <ArrowForwardIosIcon />
+        <ArrowForwardIosIcon sx={{ opacity: "0.5" }} fontSize="large" />
       </button>
     </>
   );

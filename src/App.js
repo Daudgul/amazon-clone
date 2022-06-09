@@ -31,7 +31,7 @@ function App() {
   });
   return (
     <BrowserRouter>
-      <div className="app">
+      <div className="app" style={{ minWidth: "600px" }}>
         <Header />
         <Routes>
           <Route path="/" element={<Home />} />

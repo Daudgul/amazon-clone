@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import "./CheckoutProduct.css";
 
 const CheckoutProduct = (props) => {
-  const { id, title, image, price, rating } = props;
+  const { id, title, image, price, rating, amount } = props;
   const basket = useSelector((state) => state.basket);
   const dispatch = useDispatch();
 
@@ -32,6 +32,11 @@ const CheckoutProduct = (props) => {
             .map((_, i) => (
               <p>🌟</p>
             ))}
+        </div>
+        <div className="amount__btn">
+          <button className="btn">+</button>
+          <p>{amount}</p>
+          <button className="btn">-</button>
         </div>
         <button onClick={removeFromBasket}>Remove from Basket</button>
       </div>

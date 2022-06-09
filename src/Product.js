@@ -5,7 +5,7 @@ import reducer from "./reducer";
 import { initialState } from "./reducer";
 
 const Product = (props) => {
-  const { id, title, image, price, rating } = props;
+  const { amount, id, title, image, price, rating } = props;
   const dispatch = useDispatch();
   const basket = useSelector((state) => state.basket);
 
@@ -19,6 +19,7 @@ const Product = (props) => {
         image,
         price,
         rating,
+        amount,
       },
     });
   };

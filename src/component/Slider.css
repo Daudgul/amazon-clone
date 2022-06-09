@@ -44,7 +44,7 @@
 .next {
   border: none;
   position: absolute;
-  top: 200px;
+  top: 120px;
   transform: translateY(-50%);
   background-color: transparent;
   display: grid;
@@ -80,7 +80,7 @@
 .nextSlide {
   transform: translateX(100%);
 }
-article {
+.old__article {
   position: absolute;
   top: 0;
   left: 0;

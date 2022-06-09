@@ -35,6 +35,7 @@ const counterReducer = (state = initialState, action) => {
       user: action.user,
     };
   }
+
   return state;
 };
 
